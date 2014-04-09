@@ -1,0 +1,25 @@
+<head>
+  <title>color</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <h1>Hello World!</h1>
+  <p>Tweet count: {{count}}</p>
+  <table cellpadding="0" cellspacing="0">
+    <tr>
+      <th>
+        Text
+      </th>
+    </tr>
+    {{#each tweets}}
+    <tr>
+      <td>{{text}}</td>
+      <td>{{geo.coordinates}}</td>
+    </tr>
+    {{/each}}
+  </table>
+</template>

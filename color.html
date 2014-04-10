@@ -14,15 +14,19 @@
   <table class="table">
     <thead>
       <tr>
+        <th>Timestamp</th>
         <th>Text</th>
-        <th>Geo coordinates</th>
+        <th>Coordinates</th>
+        <th>Location</th>
       </tr>
     </thead>
     <tbody>
       {{#each tweets}}
       <tr>
-        <td>{{text}}</td>
-        <td>{{geo.coordinates}}</td>
+        <td>{{tweet_timestamp}}</td>
+        <td>{{tweet_text}}</td>
+        <td>{{tweet_location}}</td>
+        <td>{{user_location}}</td>
       </tr>
       {{/each}}
     </tbody>

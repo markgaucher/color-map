@@ -1,24 +1,12 @@
 if (Meteor.isClient) {
 
-  Template.hello.greeting = function () {
-    return "Welcome to color.";
-  };
-
   Template.hello.count = function() {
     return Tweets.find().fetch().length;
   }
-
   Template.hello.tweets = function() {
     return Tweets.find({});
   }
 
-  Template.hello.events({
-    'click input': function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
-    }
-  });
 }
 
 if (Meteor.isServer) {
@@ -34,7 +22,12 @@ if (Meteor.isServer) {
 
     var stream = Twit.stream('statuses/filter', { track: '#sad' });
     stream.on('tweet', Meteor.bindEnvironment(function(tweet) {
-      Tweets.insert(tweet);
+      Tweets.insert({
+        tweet_timestamp: tweet.created_at,
+        tweet_location: tweet.geo,
+        tweet_text: tweet.text,
+        user_location: tweet.user.location
+      });
     }));
 
   });

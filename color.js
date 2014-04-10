@@ -3,6 +3,9 @@ if (Meteor.isClient) {
   Template.hello.count = function() {
     return Tweets.find().fetch().length;
   }
+  Template.hello.geo_count = function() {
+    return Tweets.find({tweet_location:{$ne:null}}).fetch().length;
+  }
   Template.hello.tweets = function() {
     return Tweets.find({});
   }

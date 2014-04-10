@@ -32,7 +32,7 @@ if (Meteor.isServer) {
       , access_token_secret:  'saXdIaHwqUbrQPjsnyiQBMkihHiNVN4Q0OtTHiR1EnF6F'
     });
 
-    var stream = Twit.stream('statuses/filter', { track: '#toronto' });
+    var stream = Twit.stream('statuses/filter', { track: '#sad' });
     stream.on('tweet', Meteor.bindEnvironment(function(tweet) {
       Tweets.insert(tweet);
     }));

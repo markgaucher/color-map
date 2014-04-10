@@ -1,21 +1,10 @@
-<head>
-  <title>color</title>
-</head>
-
-<body>
-  <div class="container">
-    {{> hello}}
-  </div>
-</body>
-
-<template name="hello">
-  <h1>#sad</h1>
+<template name="tweetsIndex">
+  <h1>#happy</h1>
   <p>{{count}} tweets, {{geo_count}} with geo location data</p>
   <table class="table">
     <thead>
       <tr>
         <th>Timestamp</th>
-        <th>Text</th>
         <th>Coordinates</th>
         <th>Location</th>
       </tr>
@@ -24,9 +13,8 @@
       {{#each tweets}}
       <tr>
         <td>{{tweet_timestamp}}</td>
-        <td>{{tweet_text}}</td>
         <td>{{tweet_location.coordinates}}</td>
-        <td>{{user_location}}</td>
+        <td>{{tweet_place.full_name}}</td>
       </tr>
       {{/each}}
     </tbody>

@@ -9,7 +9,7 @@ Meteor.startup(function () {
     , access_token_secret:  'saXdIaHwqUbrQPjsnyiQBMkihHiNVN4Q0OtTHiR1EnF6F'
   });
 
-  var stream = Twit.stream('statuses/filter', { locations: '46.67023,-82.38676,40.67023,-76.38676' });
+  var stream = Twit.stream('statuses/filter', { locations: '-80,43,-79,44' });
   stream.on('tweet', Meteor.bindEnvironment(function(tweet) {
     Tweets.insert({
       tweet_timestamp: tweet.created_at,

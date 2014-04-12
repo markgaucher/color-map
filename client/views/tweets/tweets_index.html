@@ -1,11 +1,15 @@
 <template name="tweetsIndex">
-  <h1>#happy</h1>
-  <p>{{count}} tweets, {{geo_count}} with geo location data</p>
+  <h1>Toronto</h1>
+  <p>{{count}} tweets</p>
   <table class="table">
     <thead>
       <tr>
         <th>Timestamp</th>
+<!--         <th>Text</th> -->
         <th>Coordinates</th>
+        <th>Score</th>
+        <th>Positive</th>
+        <th>Negative</th>
         <th>Location</th>
       </tr>
     </thead>
@@ -13,10 +17,23 @@
       {{#each tweets}}
       <tr>
         <td>{{tweet_timestamp}}</td>
+<!--         <td>{{tweet_text}}</td> -->
         <td>{{tweet_location.coordinates}}</td>
+        <td><span class="score-{{tweet_score.score}}">{{tweet_score.score}}</span></td>
+        <td>
+          {{#each tweet_score.positive.words}}
+            {{this}}
+          {{/each}}
+        </td>
+        <td>
+          {{#each tweet_score.negative.words}}
+            {{this}}
+          {{/each}}
+        </td>
         <td>{{tweet_place.full_name}}</td>
       </tr>
       {{/each}}
     </tbody>
   </table>
+
 </template>

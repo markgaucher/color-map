@@ -1,0 +1,28 @@
+<template name="pointsIndex">
+
+  <h1>Map</h1>
+  <div class="map">
+
+  </div>
+
+  <h1>Table</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Latitude, Longitude</th>
+        <th>Mood</th>
+        <th>Tweet Count</th>
+        <th>Average Mood</th>
+      </tr>
+    </thead>
+    {{#each points}}
+      <tr>
+        <td>{{latitude}}, {{longitude}}</td>
+        <td>{{mood}}</td>
+        <td>{{count}}</td>
+        <td>{{average mood count}}</td>
+      </tr>
+    {{/each}}
+  </table>
+
+</template>

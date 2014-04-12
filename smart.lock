@@ -4,7 +4,9 @@
     "basePackages": {
       "twit": {},
       "bootstrap-3": {},
-      "iron-router": {}
+      "iron-router": {},
+      "npm": {},
+      "scss": {}
     },
     "packages": {
       "twit": {
@@ -21,6 +23,16 @@
         "git": "https://github.com/EventedMind/iron-router.git",
         "tag": "v0.7.0",
         "commit": "05f34bc48c4cad9fdaa366c1ddcabe6980232ece"
+      },
+      "npm": {
+        "git": "https://github.com/arunoda/meteor-npm.git",
+        "tag": "v0.2.6",
+        "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
+      },
+      "scss": {
+        "git": "https://github.com/fourseven/meteor-scss.git",
+        "tag": "v0.8.4",
+        "commit": "11af0da643944d241fe7d173af76162c4b670dee"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

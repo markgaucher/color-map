@@ -1,8 +1,8 @@
 Meteor.startup(function () {
 
   // include sentiment
-  var sentiment = Meteor.require('sentiment'),
-
+  var sentiment = Meteor.require('sentiment');
+  
   // connect to Twitter
   Twit = new TwitMaker({
       consumer_key:         '2tC07cB1RQBCiDyFiix5sa9Vr'
@@ -15,10 +15,12 @@ Meteor.startup(function () {
   var stream = Twit.stream('statuses/filter', { locations: '-132.0,23.0,-58.0,54.0' });
   stream.on('tweet', Meteor.bindEnvironment(function(tweet) {
     if(tweet.geo) {
+      // calculate score
       var score = 0;
       sentiment(tweet.text, function(err, result) {
         score = result.score;
       })
+      // update or insert database
       Points.upsert({
         'latitude' : Math.floor(tweet.geo.coordinates[0]),
         'longitude' : Math.floor(tweet.geo.coordinates[1])

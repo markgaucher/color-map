@@ -9,5 +9,6 @@ twit
 bootstrap-3
 iron-router
 autopublish
-npm
 scss
+sentiment
+npm

@@ -5,8 +5,9 @@
       "twit": {},
       "bootstrap-3": {},
       "iron-router": {},
-      "npm": {},
-      "scss": {}
+      "scss": {},
+      "sentiment": {},
+      "npm": {}
     },
     "packages": {
       "twit": {
@@ -24,15 +25,20 @@
         "tag": "v0.7.0",
         "commit": "05f34bc48c4cad9fdaa366c1ddcabe6980232ece"
       },
-      "npm": {
-        "git": "https://github.com/arunoda/meteor-npm.git",
-        "tag": "v0.2.6",
-        "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
-      },
       "scss": {
         "git": "https://github.com/fourseven/meteor-scss.git",
         "tag": "v0.8.4",
         "commit": "11af0da643944d241fe7d173af76162c4b670dee"
+      },
+      "sentiment": {
+        "git": "https://github.com/andreioprisan/meteor-sentiment.git",
+        "tag": "v0.2.1",
+        "commit": "a1901bd59d3a048f6df2e6484c08e46b506b5447"
+      },
+      "npm": {
+        "git": "https://github.com/arunoda/meteor-npm.git",
+        "tag": "v0.2.6",
+        "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

@@ -3,7 +3,8 @@
     "twit": {},
     "bootstrap-3": {},
     "iron-router": {},
-    "npm": {},
-    "scss": {}
+    "scss": {},
+    "sentiment": {},
+    "npm": {}
   }
 }

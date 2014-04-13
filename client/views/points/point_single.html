@@ -1,5 +1,5 @@
 <template name="pointSingle">
-  <div class="latitude-{{latitude}} longitude-{{longitude}}">
+  <div class="latitude-{{latitude}} longitude-{{longitude}} mood-{{#if positive mood}}positive{{else}}negative{{/if}}">
     {{average mood count}}
   </div>
 </template>

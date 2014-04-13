@@ -9,3 +9,7 @@ Handlebars.registerHelper('positive', function(mood) {
     return false;
   }
 })
+
+Handlebars.registerHelper('absolute', function(value) {
+  return Math.abs(value);
+})

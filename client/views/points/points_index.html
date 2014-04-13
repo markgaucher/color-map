@@ -2,7 +2,9 @@
 
   <h1>Map</h1>
   <div class="map">
-
+    {{#each points}}
+      {{>pointSingle}}
+    {{/each}}
   </div>
 
   <h1>Table</h1>

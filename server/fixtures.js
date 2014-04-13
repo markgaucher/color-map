@@ -22,7 +22,7 @@ Meteor.startup(function () {
         $inc: {
           'mood' : analyze(tweet.text).score,
           'count' : 1
-        }
+        },
       });
     }
     // Tweets.insert({

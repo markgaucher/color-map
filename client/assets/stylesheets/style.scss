@@ -1,14 +1,21 @@
 .map {
+  font-size: 10px;
+  height: 740px;
+  width: 660px;
+  position: relative;
+}
 
+[class^="latitude"] {
+  position: absolute;
 }
-.map-row {
-  clear: left;
+
+@for $i from 22 to 55 {
+  .latitude-#{$i} {
+    left: ($i - 22) * 30px;
+  }
 }
-.map-column {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  float: left;
-  height: 7px;
-  margin: 1px;
-  width: 7px;
+@for $i from -132 to -58 {
+  .longitude-#{$i} {
+    top: ($i + 132) * 10px;
+  }
 }

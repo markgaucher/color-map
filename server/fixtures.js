@@ -2,7 +2,7 @@ Meteor.startup(function () {
 
   // include sentiment
   var sentiment = Meteor.require('sentiment');
-  
+
   // connect to Twitter
   Twit = new TwitMaker({
       consumer_key:         '2tC07cB1RQBCiDyFiix5sa9Vr'
@@ -22,8 +22,8 @@ Meteor.startup(function () {
       })
       // update or insert database
       Points.upsert({
-        'latitude' : Math.floor(tweet.geo.coordinates[0]),
-        'longitude' : Math.floor(tweet.geo.coordinates[1])
+        'latitude' : round(tweet.geo.coordinates[0]),
+        'longitude' : round(tweet.geo.coordinates[1])
       }, {
         $inc: {
           'mood' : score,
@@ -41,5 +41,9 @@ Meteor.startup(function () {
     // });
   }));
 
+  // round to nearest whole number or half
+  round = function(val) {
+    return 5 * Math.round((val * 10) / 5);
+  }
 
 });

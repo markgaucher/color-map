@@ -13,31 +13,39 @@ $color-03:     #cccccc;
 $color-04:     lighten($color-base, 15%);
 $color-05:     lighten($color-base, 30%);
 
+$point-width:     6px;
+$point-padding:   1px;
+$point:           $point-width + (2 * $point-padding);
+
 
 .map {
   font-size: 10px;
-  height: 660px;
-  width: 740px;
+  height: 66 * $point;
+  margin-top: 50px;
   position: relative;
 }
 
 .point {
-  width: 9px;
-  height: 9px;
+  width: $point-width;
+  height: $point-width;
   border-style: solid;
-  border-radius: 6px;
+  border-radius: $point-width / 2;
   position: absolute;
   text-indent: -9999px;
 }
 
-@for $x from 58 to 132 {
-  .longitude-#{$x} {
-    left: abs($x - 132) * 11px;
+@for $x from 580 to 1320 {
+  @if $x % 5 == 0 {
+    .longitude-#{$x} {
+      left: (abs($x - 1320) * $point) / 5;
+    }
   }
 }
-@for $y from 22 to 55 {
-  .latitude-#{$y} {
-    top: abs($y - 55) * 11px;
+@for $y from 220 to 550 {
+  @if $y % 5 == 0 {
+    .latitude-#{$y} {
+      top: (abs($y - 550) * $point) / 5;
+    }
   }
 }
 
@@ -70,7 +78,7 @@ $color-05:     lighten($color-base, 30%);
   border-width: 3px;
 }
 .weight-normal {
-  border-width: 2px;
+  border-width: 1.5px;
 }
 .weight-light {
   border-width: 1px;

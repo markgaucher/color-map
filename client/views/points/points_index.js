@@ -9,7 +9,7 @@ Deps.autorun(function() {
 Template.pointsIndex.helpers({
   points: function() {
     if(Session.get("active")) {
-      return Points.find({'latitude': {$gt: 21, $lt: 55}, 'longitude': {$gt: -132, $lt: -58}}, {sort: {'latitude': 1, 'longitude': 1}});
+      return Points.find({'latitude': {$gt: 210, $lt: 550}, 'longitude': {$gt: -1320, $lt: -580}}, {sort: {'latitude': 1, 'longitude': 1}});
     } else {
       return [];
     }

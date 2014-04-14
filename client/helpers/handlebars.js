@@ -6,9 +6,9 @@ Handlebars.registerHelper('sentiment', function(total, count) {
   var mood = (total / count);
   if (mood > 1.0) {
     return 'happier';
-  } else if (mood > 0.5) {
+  } else if (mood > 0.4) {
     return 'happy';
-  } else if (mood > 0) {
+  } else if (mood > 0.1) {
     return 'neutral';
   } else if (mood > -1.0) {
     return 'sad';
@@ -18,12 +18,10 @@ Handlebars.registerHelper('sentiment', function(total, count) {
 })
 
 Handlebars.registerHelper('weight', function(count) {
-  if (count > 5000) {
+  if (count > 1000) {
     return 'strong';
-  } else if (count > 500) {
-    return 'normal';
   } else {
-    return 'light';
+    return 'normal';
   }
 })
 

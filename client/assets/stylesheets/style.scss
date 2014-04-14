@@ -22,8 +22,8 @@ $color-05:     lighten($color-base, 30%);
 }
 
 .point {
-  width: 12px;
-  height: 12px;
+  width: 9px;
+  height: 9px;
   border-style: solid;
   border-radius: 6px;
   position: absolute;
@@ -32,12 +32,12 @@ $color-05:     lighten($color-base, 30%);
 
 @for $x from 58 to 132 {
   .longitude-#{$x} {
-    left: abs($x - 132) * 16px;
+    left: abs($x - 132) * 11px;
   }
 }
 @for $y from 22 to 55 {
   .latitude-#{$y} {
-    top: abs($y - 55) * 16px;
+    top: abs($y - 55) * 11px;
   }
 }
 

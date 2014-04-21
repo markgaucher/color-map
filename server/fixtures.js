@@ -31,6 +31,7 @@ Meteor.startup(function () {
         },
       });
     }
+    
     // Tweets.insert({
     //   tweet_timestamp: tweet.created_at,
     //   tweet_location: tweet.geo,

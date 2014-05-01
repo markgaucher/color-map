@@ -15,7 +15,7 @@ $color-05:     lighten($color-base, 30%);
 
 $point-width:     6px;
 $point-padding:   1px;
-$point:           $point-width + (2 * $point-padding);
+$point:           $point-width + (1 * $point-padding);
 
 
 .map {

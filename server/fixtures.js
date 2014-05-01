@@ -26,25 +26,51 @@ Meteor.startup(function () {
         'longitude' : round(tweet.geo.coordinates[1])
       }, {
         $inc: {
-          'mood' : score,
+          'mood' : score, // score * (0.1 ^ t)
           'count' : 1
         },
       });
     }
-    
-    // Tweets.insert({
-    //   tweet_timestamp: tweet.created_at,
-    //   tweet_location: tweet.geo,
-    //   tweet_place: tweet.place,
-    //   tweet_text: tweet.text,
-    //   tweet_score: analyze(tweet.text),
-    //   tweet_entities: tweet.entities,
-    // });
   }));
+
+  var lat = 230,
+    t = 0,
+    i = 0;
+  Meteor.setInterval(function() {
+    Points.find({
+      'latitude' : lat
+    }).forEach(function(point) {
+      if(point.mood) {
+        // console.log("(" + (point.latitude / 10) + ", " + (point.longitude / 10) + ") changed from " + point.mood + " to " + (point.mood + (-point.mood * 0.1)));
+        Points.update({
+          '_id' : point._id
+        }, {
+          $inc: {
+            'mood' : -(point.mood * 0.1)
+          }
+        });
+      }
+    });
+    // possible once Meteor supports MongoDB 2.6
+    // -----------------------------------------
+    // Points.update({
+    //   'latitude' : lat
+    // }, {
+    //   $inc: {
+    //     'mood' : 0.1
+    //   }
+    // }, { 'multi' : true }
+    // );
+    lat += 5;
+    i++;
+    if(i % 66 === 0) { t++; lat = 230; }
+  }, 500);
 
   // round to nearest whole number or half
   round = function(val) {
     return 5 * Math.round((val * 10) / 5);
   }
+
+
 
 });

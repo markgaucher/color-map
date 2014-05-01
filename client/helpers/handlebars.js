@@ -4,13 +4,13 @@ Handlebars.registerHelper('average', function(total, count) {
 
 Handlebars.registerHelper('sentiment', function(total, count) {
   var mood = (total / count);
-  if (mood > 1.0) { // 1.0
+  if (mood > 1.2) { // 1.0
     return 'happier';
   } else if (mood > 0.05) { // 0.4
     return 'happy';
   } else if (mood > -0.05) { // 0.1
     return 'neutral';
-  } else if (mood > -1.0) { // -1.0
+  } else if (mood > -1.2) { // -1.0
     return 'sad';
   } else {
     return 'sadder';

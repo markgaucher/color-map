@@ -6,9 +6,9 @@ Handlebars.registerHelper('sentiment', function(total, count) {
   var mood = (total / count);
   if (mood > 1.0) { // 1.0
     return 'happier';
-  } else if (mood > 0.3) { // 0.4
+  } else if (mood > 0.05) { // 0.4
     return 'happy';
-  } else if (mood > 0) { // 0.1
+  } else if (mood > -0.05) { // 0.1
     return 'neutral';
   } else if (mood > -1.0) { // -1.0
     return 'sad';

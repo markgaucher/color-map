@@ -46,7 +46,8 @@ Meteor.startup(function () {
           '_id' : point._id
         }, {
           $inc: {
-            'mood' : -(point.mood * 0.1)
+            'mood' : -(point.mood * 0.3),
+            'count' : -(point.count * 0.3)
           }
         });
       }
@@ -56,15 +57,15 @@ Meteor.startup(function () {
     // Points.update({
     //   'latitude' : lat
     // }, {
-    //   $inc: {
-    //     'mood' : 0.1
+    //   $mul: {
+    //     'mood' : 0.2
     //   }
     // }, { 'multi' : true }
     // );
     lat += 5;
     i++;
     if(i % 66 === 0) { t++; lat = 230; }
-  }, 500);
+  }, 250);
 
   // round to nearest whole number or half
   round = function(val) {
